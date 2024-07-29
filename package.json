@@ -1,7 +1,8 @@
 {
-  "scripts": {
-    "postinstall": "npx puppeteer browsers install chrome"
-  },
+"scripts": {
+    "start": "node index.js",
+    "build": "npm install && npx puppeteer install"
+},
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
