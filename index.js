@@ -3,6 +3,7 @@ const {Connect, Save} = require('./db')
 const {Extract} =  require('./extract')
 const {Notifier} = require('./notifier')
 
+
 async function connect() { await Connect() }
 
 connect();
