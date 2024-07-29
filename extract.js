@@ -1,11 +1,10 @@
 const puppeteer = require('puppeteer')
 
-async function Extract() {    
-      const browser = await puppeteer.launch({
+async function Extract() {  
+  const browser = await puppeteer.launch({
       headless: true,
-      executablePath: '/opt/render/.cache/puppeteer/chrome/linux-127.0.6533.72/chrome-linux64/chrome',
       args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
+  });
       const page = await browser.newPage();
 
       await page.goto('https://www.jecjabalpur.ac.in');
