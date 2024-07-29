@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer')
 
 async function Extract() {
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({headless:true});
       const page = await browser.newPage();
 
       await page.goto('https://www.jecjabalpur.ac.in');
