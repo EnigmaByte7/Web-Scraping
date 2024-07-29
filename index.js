@@ -2,7 +2,17 @@ const nodeCron = require('node-cron')
 const {Connect, Save} = require('./db')
 const {Extract} =  require('./extract')
 const {Notifier} = require('./notifier')
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
 
+app.get('/', (req, res) => {
+  res.send('Automation service is Online!')
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
 
 async function connect() { await Connect() }
 
@@ -18,3 +28,4 @@ const job = nodeCron.schedule("*/5 * * * *",
         }
 });
 job.start();
+
