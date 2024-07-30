@@ -26,6 +26,6 @@ nodeCron.schedule("*/5 * * * *", ()=> {
 
 
 app.listen(1000, () => {
-    console.log(`Example app listening on port 1000`)
+    console.log(`Notifyu listening on port 1000`)
   })
 
