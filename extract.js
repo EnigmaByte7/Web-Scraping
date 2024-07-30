@@ -8,7 +8,7 @@ async function Extract() {
   });
       const page = await browser.newPage();
 
-      await page.goto('https://www.jecjabalpur.ac.in');
+      await page.goto('https://www.jecjabalpur.ac.in', {timeout: 0});
       await page.waitForSelector('.ImpText1')
       await page.waitForSelector('.ImpText2')
 
