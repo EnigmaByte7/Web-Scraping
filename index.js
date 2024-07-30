@@ -12,7 +12,7 @@ app.get('/', (req,res)=>{
 async function connect() { await Connect() }
 
 connect();
-nodeCron.schedule("*/5 * * * *", ()=> {
+const job = nodeCron.schedule("*/5 * * * *", ()=> {
     async function main(){
         const notices = await Extract();
         const res = await Save(notices);
@@ -22,8 +22,10 @@ nodeCron.schedule("*/5 * * * *", ()=> {
             Notifier(res);
         }
     }
+    main();
 })
 
+job.start();
 
 app.listen(1000, () => {
     console.log(`Notifyu listening on port 1000`)
